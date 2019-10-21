@@ -1,21 +1,69 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<div class="w3">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#performance" class="w3-button w3-block w3-black">Performance Graphs</a>
+    </div>
+   <i class="fa fa-linkedin-square" style="font-size:24px;color:red;align-items: right"></i>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">SACHIN TENDULKAR</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:50px">Playing It<br>My Way</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-black">24 April 1973</span>
+  </div>
+</header>
+<div class="w3-sand w3-grayscale w3-large">
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT </span></h5>
+    <p>{{content}}
+    </p>
+    <p>
+    Sachin was majorly an opening right-handed batsman who also donned in the middle order. He holds the record for the highest tally of runs in Test as well as ODI cricket. He was the first batsman to score a double century in the white ball game. With only a height of 5 ft 5, he still hooked the ball as good as a tall Mohinder Amarnath.</p>
+    <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>“People throw stones at you and you convert them into milestones.”  </i></p>
+      <p>-- Sachin Tendulkar</p>
+    </div>  
+  </div>
+</div>
+</div>
+<br>
+<br>
+<h3 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">PERFORMANCE GRAPHS </span></h3>
+<div  id="performance" class="container" *ngIf="csvData.length > 0">
+<mat-tab-group>
+  <mat-tab label="Sachin As BatsMan"> 
+   <app-bar-chart   [records]="csvData" >
+   </app-bar-chart> 
+   <br>
+   <app-bar-line [records]="csvData">  
+   </app-bar-line>
+   <app-doughnut-chart [records]="csvData"></app-doughnut-chart>
+   <app-polar-chart [records]="csvData"></app-polar-chart>
+    <app-pie-chart [records]="csvData"></app-pie-chart>
+  </mat-tab>
+  <mat-tab label="Sachin As Bowler"> <app-polar-chart-wickets [records]="csvData"></app-polar-chart-wickets>
+  <app-bar-line-bowler [records]="csvData"></app-bar-line-bowler>
+  </mat-tab>
+</mat-tab-group>
+</div>     
 <router-outlet></router-outlet>
