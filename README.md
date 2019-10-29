@@ -49,5 +49,6 @@ To install the CLI using npm, open a terminal/console window and enter the follo
 npm install -g @angular/cli
 8-Go to the workspace folder (sachin-app).
   Launch the server by using the CLI command ng serve, with the --open option.
-  cd my-app
+  cd sachin-app
+  npm install
   ng serve --open
