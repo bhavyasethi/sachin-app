@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import * as contentFields from "../assets/about.json";
+// import * as contentFields from '../assets/about.json';
+declare var require: any
+const contentFields = require('../assets/about.json');
+
 @Injectable({
   providedIn: 'root'
 })

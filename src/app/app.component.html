@@ -52,6 +52,7 @@
 <div  id="performance" class="container" *ngIf="csvData.length > 0">
 <mat-tab-group>
   <mat-tab label="Sachin As BatsMan"> 
+
    <app-bar-chart   [records]="csvData" >
    </app-bar-chart> 
    <br>
@@ -61,6 +62,7 @@
    <app-polar-chart [records]="csvData"></app-polar-chart>
     <app-pie-chart [records]="csvData"></app-pie-chart>
   </mat-tab>
+
   <mat-tab label="Sachin As Bowler"> <app-polar-chart-wickets [records]="csvData"></app-polar-chart-wickets>
   <app-bar-line-bowler [records]="csvData"></app-bar-line-bowler>
   </mat-tab>
